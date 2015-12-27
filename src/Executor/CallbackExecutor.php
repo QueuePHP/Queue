@@ -11,7 +11,7 @@ namespace Queue\Executor;
 
 use Queue\Job\JobInterface;
 
-class JobExecutor implements JobExecutorInterface
+class CallbackExecutor implements JobExecutorInterface
 {
     /**
      * @param JobInterface $job

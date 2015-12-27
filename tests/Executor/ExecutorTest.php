@@ -14,13 +14,13 @@ use Queue\Job\Job;
 class ExecutorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var JobExecutor
+     * @var CallbackExecutor
      */
     private $executor;
 
     protected function setUp()
     {
-        $this->executor = new JobExecutor();
+        $this->executor = new CallbackExecutor();
     }
 
     public function testNoCallback()
