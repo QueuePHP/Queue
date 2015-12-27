@@ -1,0 +1,30 @@
+{
+  "name": "queue/queue",
+  "type": "library",
+  "description": "Generic queue",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dries De Peuter",
+      "email": "dries@nousefreak.be"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "psr/log-implementation": "^1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.1",
+    "monolog/monolog": "^1.17"
+  },
+  "autoload": {
+    "psr-4": {
+      "Queue\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Queue\\": "tests/"
+    }
+  }
+}
