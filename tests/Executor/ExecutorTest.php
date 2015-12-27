@@ -1,13 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ddepeuter
- * Date: 27/12/15
- * Time: 20:19
+ * This file is part of the Queue package.
+ *
+ * (c) Dries De Peuter <dries@nousefreak.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Queue\Executor;
-
 
 use Queue\Job\Job;
 
@@ -44,7 +45,7 @@ class ExecutorTest extends \PHPUnit_Framework_TestCase
     public function testCallback()
     {
         $called = false;
-        $callback = function() use (&$called) {
+        $callback = function () use (&$called) {
             return $called = true;
         };
 
@@ -58,8 +59,9 @@ class ExecutorTest extends \PHPUnit_Framework_TestCase
     public function testCallbackArguments()
     {
         $arguments = null;
-        $callback = function($name, $data) use (&$arguments) {
+        $callback = function ($name, $data) use (&$arguments) {
             $arguments = func_get_args();
+
             return true;
         };
 
@@ -72,7 +74,7 @@ class ExecutorTest extends \PHPUnit_Framework_TestCase
 
     public function testCallbackReturn()
     {
-        $callback = function() {
+        $callback = function () {
             return true;
         };
 

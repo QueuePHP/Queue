@@ -1,13 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ddepeuter
- * Date: 27/12/15
- * Time: 14:53
+ * This file is part of the Queue package.
+ *
+ * (c) Dries De Peuter <dries@nousefreak.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Queue\Executor;
-
 
 use Queue\Job\JobInterface;
 
@@ -17,6 +18,7 @@ class CallbackExecutor implements JobExecutorInterface
      * @param JobInterface $job
      *
      * @return bool
+     *
      * @throws \Exception
      */
     public function execute(JobInterface $job)

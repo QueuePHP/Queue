@@ -1,13 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: ddepeuter
- * Date: 27/12/15
- * Time: 14:11
+ * This file is part of the Queue package.
+ *
+ * (c) Dries De Peuter <dries@nousefreak.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Queue\Worker;
-
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -49,6 +50,7 @@ class Worker
 
     /**
      * Worker constructor.
+     *
      * @param Queue                $queue
      * @param JobExecutorInterface $executor
      * @param int                  $workerId
@@ -58,12 +60,12 @@ class Worker
         JobExecutorInterface $executor,
         $workerId
     ) {
-        $this->queue    = $queue;
+        $this->queue = $queue;
         $this->executor = $executor;
         $this->workerId = $workerId;
 
         $this->instanceHash = md5(uniqid(rand(), true));
-        $this->run          = false;
+        $this->run = false;
     }
 
     /**
@@ -146,7 +148,6 @@ class Worker
 
     private function heartbeat($message)
     {
-
     }
 
     private function log($level, $message, $context = [])
