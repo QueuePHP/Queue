@@ -1,5 +1,7 @@
 Queue
 ====
+ [![Build Status](https://img.shields.io/travis/QueuePHP/Queue/master.svg?style=flat-square)](https://travis-ci.org/QueuePHP/Queue)
+ [![Author](https://img.shields.io/badge/author-@NoUseFreak-blue.svg?style=flat-square)](http://nousefreak.be)
  [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 
