@@ -24,9 +24,9 @@ class QueueTest extends \PHPUnit_Framework_TestCase
 
         $stub->expects($this->once())
             ->method('addJob')
-            ->with($job);
+            ->with('test', $job);
 
-        $queue = new Queue($stub);
+        $queue = new Queue($stub, 'test');
 
         $queue->addJob($job);
     }
@@ -40,9 +40,9 @@ class QueueTest extends \PHPUnit_Framework_TestCase
 
         $stub->expects($this->once())
             ->method('removeJob')
-            ->with($job);
+            ->with('test', $job);
 
-        $queue = new Queue($stub);
+        $queue = new Queue($stub, 'test');
 
         $queue->removeJob($job);
     }
@@ -56,9 +56,9 @@ class QueueTest extends \PHPUnit_Framework_TestCase
 
         $stub->expects($this->once())
             ->method('buryJob')
-            ->with($job);
+            ->with('test', $job);
 
-        $queue = new Queue($stub);
+        $queue = new Queue($stub, 'test');
 
         $queue->buryJob($job);
     }
@@ -71,7 +71,7 @@ class QueueTest extends \PHPUnit_Framework_TestCase
         $stub->expects($this->once())
             ->method('resolveJob');
 
-        $queue = new Queue($stub);
+        $queue = new Queue($stub, 'test');
 
         $queue->resolveJob();
     }

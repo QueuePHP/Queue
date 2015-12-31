@@ -20,9 +20,15 @@ class Queue
      */
     private $driver;
 
-    public function __construct(DriverInterface $driver)
+    /**
+     * @var
+     */
+    private $name;
+
+    public function __construct(DriverInterface $driver, $name = 'worker_queue')
     {
         $this->driver = $driver;
+        $this->name   = $name;
     }
 
     /**
@@ -30,7 +36,7 @@ class Queue
      */
     public function addJob(JobInterface $job)
     {
-        $this->driver->addJob($job);
+        $this->driver->addJob($this->name, $job);
     }
 
     /**
@@ -38,7 +44,7 @@ class Queue
      */
     public function resolveJob()
     {
-        return $this->driver->resolveJob();
+        return $this->driver->resolveJob($this->name);
     }
 
     /**
@@ -46,7 +52,7 @@ class Queue
      */
     public function removeJob(JobInterface $job)
     {
-        $this->driver->removeJob($job);
+        $this->driver->removeJob($this->name, $job);
     }
 
     /**
@@ -54,6 +60,6 @@ class Queue
      */
     public function buryJob(JobInterface $job)
     {
-        $this->driver->buryJob($job);
+        $this->driver->buryJob($this->name, $job);
     }
 }
